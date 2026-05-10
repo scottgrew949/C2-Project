@@ -130,18 +130,16 @@ void DonationManager::printColleges() const
 // Private ------------------------------------------------------
 double DonationManager::getDonorTotal(const string& donorName) const
 {
-    double total = 0.0;
-    DonationNode* current = donations.getFirst();
-    
-    while (current != nullptr) {
-        if (current->data.getDonorName() == donorName) {
-            total += current->data.getAmount();
-            break;
+    DonationNode* current = donations.getFirst;
+
+    while (current != nullptr)
+    {
+        if (current->data.getDonorName() == donorName)
+        {
+            return current->data.getAmount();
         }
         current = current->next;
     }
-    
-    return total;
 }
 
 double DonationManager::getCollegeTotal(const string& collegeCode) const
