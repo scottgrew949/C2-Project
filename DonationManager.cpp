@@ -1,3 +1,13 @@
+/*
+    Grew, Scott (Team Leader)
+    Teppei Yoshikawa
+
+    Spring 2026
+    CS A250 - C++ 2
+
+    College Donations
+*/
+
 #include "DonationManager.h"
 #include <iostream>
 #include <string>
@@ -9,7 +19,7 @@ int DonationManager::addDonor(const string& donorName)
 {
     Donor newDonor(donorName, nextDonorID);
     donors.insert(newDonor);
-    return ++nextDonorID;
+    return nextDonorID++;
 }
 
 void DonationManager::addCollege(const string& collegeCode, 
