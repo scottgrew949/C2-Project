@@ -139,7 +139,10 @@ double DonationManager::getDonorTotal(const string& donorName) const
             return current->data.getAmount();
         }
         current = current->next;
+
     }
+
+    return 0;
 }
 
 double DonationManager::getCollegeTotal(const string& collegeCode) const
