@@ -105,8 +105,22 @@ int main()
     cout << "\n===== PHASE 3: Testing Donation =====\n\n";
 
     // Test parameterized constructor + all accessors.
-    // Your code here...
+    Donation donation1("Sam", "OCC", 500.00);
 
+    cout << "-- Testing: Donation parameterized constructor and accessors --\n";
+    cout << "Expected: Sam, OCC, 500\n";
+    cout << "Actual:   " << donation1.getDonorName() << ", "
+        << donation1.getCollegeCode() << ", "
+        << donation1.getAmount() << "\n\n";
+
+    // Test another Donation object with a zero amount.
+    Donation donation3("Test Donor", "GWC", 0.00);
+
+    cout << "-- Testing: Donation with zero amount --\n";
+    cout << "Expected: Test Donor, GWC, 0\n";
+    cout << "Actual:   " << donation3.getDonorName() << ", "
+        << donation3.getCollegeCode() << ", "
+        << donation3.getAmount() << "\n\n";
     // >> Scott Begin -----------------------------------------------
     cout << "\n===== PHASE 4: Testing DonationList =====\n\n";
 
