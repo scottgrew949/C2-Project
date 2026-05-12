@@ -4,23 +4,21 @@
 #include<iostream>
 using namespace std;
 
-void CollegeList::addCollege(string code, string name)
+void CollegeList::addCollege(const string& code, const string& name)
 {
 	colleges.insert(make_pair(code, name));
 }
 
-string CollegeList::getCollegeName(string code) const
+string CollegeList::getCollegeName(const string& code) const
 {
 	return colleges.at(code);
 }
 
 void CollegeList::printColleges() const
 {
-	auto iterEnd = colleges.end();
-
-	for (auto iter = colleges.begin(); iter != iterEnd; ++iter)
+	for (const auto& elem : colleges)
 	{
-		cout << iter->second << " ";
+		cout << colleges.second << " ";
 	}
 }
 
