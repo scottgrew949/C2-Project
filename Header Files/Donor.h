@@ -11,6 +11,9 @@ class Donor
 		std::string getDonorName() const;
 		int getDonorID() const;
 
+		bool Donor::operator<(const Donor& other) const;
+		
+
 
 	private:
 		std::string donorName;

@@ -7,9 +7,9 @@
 class CollegeList
 {
 	public:
-		void addCollege(std::string code, std::string name);
+		void addCollege(const std::string& code, const std::string& name);
 
-		std::string getCollegeName(std::string) const;
+		std::string getCollegeName(const std::string&) const;
 
 		void printColleges() const;
 

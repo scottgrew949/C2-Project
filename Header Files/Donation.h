@@ -21,4 +21,4 @@ class Donation
 
 
 
-#endif#pragma once
+#endif
