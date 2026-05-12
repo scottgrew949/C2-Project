@@ -22,8 +22,8 @@ int DonationList::addDonation(const Donation& toAdd)
         last->next = newNode;
         last = newNode; 
     }
-    ++numOfDonations;
-    return numOfDonations;
+
+    return ++numOfDonations;
 }
 
 // Getters ----------------------------------------------------------

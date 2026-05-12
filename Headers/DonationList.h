@@ -8,6 +8,16 @@
     College Donations
 */
 
+/*
+    Grew, Scott (Team Leader)
+    Teppei Yoshikawa
+
+    Spring 2026
+    CS A250 - C++ 2
+
+    College Donations
+*/
+
 #ifndef DONATIONLIST_H
 #define DONATIONLIST_H
 

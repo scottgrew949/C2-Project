@@ -15,7 +15,7 @@
 using namespace std;
 
 // Controlers ---------------------------------------------------
-int DonationManager::addDonor(const string & donorName)
+int DonationManager::addDonor(const string& donorName)
 {
     Donor newDonor(donorName, nextDonorID);
     donors.insert(newDonor);
@@ -29,9 +29,9 @@ void DonationManager::addCollege(const string& collegeCode,
 }
 
 void DonationManager::addDonation(const string& donorName, 
-                                  const string& collegeCode, double anAmount)
+                        const string& collegeCode, double anAmount)
 {
-     donations.addDonation(Donation(donorName, collegeCode, anAmount));
+    donations.addDonation(Donation(donorName, collegeCode, anAmount));
 }
 
 // Printers -----------------------------------------------------
@@ -51,7 +51,8 @@ void DonationManager::printCollegeWithHighestTotal() const
         }
     }
     
-    cout << maxCollege << " (" << maxCollegeName << "): " << maxTotal << endl;
+    cout << maxCollege << " (" << maxCollegeName << "): " 
+                        << maxTotal << endl;
 }
 
 void DonationManager::printDonationsByCollege() const
@@ -80,8 +81,9 @@ void DonationManager::printDonationsByDonor() const
         
         DonationNode* current = donations.getFirst();
         while (current != nullptr) {
-            if (current->data.getDonorName() == donor.getDonorName()) {
-                cout << "  " << current->data.getCollegeCode() << ": " 
+            if (current->data.getDonorName() == donor.getDonorName()) 
+            {
+                cout << "  " << current->data.getCollegeCode() << ": "
                      << current->data.getAmount() << endl;
             }
             current = current->next;
@@ -128,8 +130,10 @@ void DonationManager::printHighestDonor() const
 void DonationManager::printStatistics() const
 {
     cout << "Number of Donors: " << donors.size() << endl;
-    cout << "Number of Colleges: " << colleges.getColleges().size() << endl;
-    cout << "Number of Donations: " << donations.getNumOfDonations() << endl;
+    cout << "Number of Colleges: " << colleges.getColleges().size() 
+            << endl;
+    cout << "Number of Donations: " << donations.getNumOfDonations() 
+            << endl;
 }
 
 void DonationManager::printColleges() const
@@ -140,18 +144,16 @@ void DonationManager::printColleges() const
 // Private ------------------------------------------------------
 double DonationManager::getDonorTotal(const string& donorName) const
 {
-    DonationNode* current = donations.getFirst;
-
-    while (current != nullptr)
-    {
-        if (current->data.getDonorName() == donorName)
+    DonationNode* current = donations.getFirst();
+    
+    while (current != nullptr) {
+        if (current->data.getDonorName() == donorName) 
         {
             return current->data.getAmount();
         }
         current = current->next;
-
     }
-
+    
     return 0;
 }
 

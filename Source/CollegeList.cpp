@@ -1,3 +1,13 @@
+/*
+    Grew, Scott (Team Leader)
+    Yoshikawa, Teppei
+	
+    Spring 2026
+    CS A250 - C++ 2
+
+    College Donations
+*/
+
 #include"CollegeList.h"
 #include<string>
 #include<map>
@@ -18,7 +28,7 @@ void CollegeList::printColleges() const
 {
 	for (const auto& elem : colleges)
 	{
-		cout << colleges.second << " ";
+		cout << elem.first << " - " << elem.second << "\n";
 	}
 }
 
