@@ -48,10 +48,7 @@ int main()
       donor2.getDonorName() + ", " + to_string(donor2.getDonorID()));
 
     // Test Donor::operator<.
-    cout << "-- Testing: Donor::operator< --\n";
-    cout << "Expected: true if donor1 is less than donor2 according to your operator< definition\n";
-    cout << "Actual:   " << (donor1 < donor2 ? "true" : "false") << "\n\n";
-
+    check("Donor::operator<", "true", donor1 < donor2 ? "true" : "false");
 
     cout << "\n===== PHASE 2: Testing CollegeList =====\n\n";
 
@@ -69,13 +66,11 @@ int main()
     cout << "Actual:   addCollege was called for OCC, GWC, and CCC.\n\n";
 
     // Test CollegeList::getCollegeName with existing college codes.
-    cout << "-- Testing: CollegeList::getCollegeName with existing college code OCC --\n";
-    cout << "Expected: Orange Coast College\n";
-    cout << "Actual:   " << collegeList.getCollegeName("OCC") << "\n\n";
+    check("getCollegeName OCC", "Orange Coast College", 
+                    collegeList.getCollegeName("OCC"));
 
-    cout << "-- Testing: CollegeList::getCollegeName with existing college code GWC --\n";
-    cout << "Expected: Golden West College\n";
-    cout << "Actual:   " << collegeList.getCollegeName("GWC") << "\n\n";
+    check("getCollegeName GWC", "Golden West College", 
+                    collegeList.getCollegeName("GWC"));
 
     // Test CollegeList::printColleges.
     cout << "-- Testing: CollegeList::printColleges --\n";
@@ -281,7 +276,7 @@ int main()
     cout << "-- Testing: loadCollegesFromFile(\"colleges.csv\", donationManagerTest) --\n";
     cout << "Expected: colleges.csv is opened and all colleges are loaded into donationManagerTest.\n";
     cout << "Actual:   ";
-    loadCollegesFromFile("Resource/colleges.csv", donationManagerTest);
+    loadCollegesFromFile("Resource Files/colleges.csv", donationManagerTest);
     cout << "Finished loadCollegesFromFile.\n\n";
 
     // After calling loadCollegesFromFile, test DonationManager::printColleges.
@@ -295,7 +290,7 @@ int main()
     cout << "-- Testing: loadDonationsFromFile(\"donations.csv\", donationManagerTest) --\n";
     cout << "Expected: donations.csv is opened and all donations are loaded into donationManagerTest.\n";
     cout << "Actual:   ";
-    loadDonationsFromFile("Resource/donations.csv", donationManagerTest);
+    loadDonationsFromFile("Resource Files/donations.csv", donationManagerTest);
     cout << "Finished loadDonationsFromFile.\n\n";
 
     // After calling loadDonationsFromFile, test all report functions.
