@@ -288,7 +288,7 @@ int main()
     DonationManager donationManagerTest;
 
     // Test loadCollegesFromFile.
-    cout << "-- Testing: loadCollegesFromFile(\"colleges.csv\", donationManagerTest) --\n";
+    cout << "-- Testing: loadCollegesFromFile(\"colleges.csv\", donationManagerTest)A --\n";
     cout << "Expected: colleges.csv is opened and all colleges are loaded into donationManagerTest.\n";
     cout << "Actual:   ";
     loadCollegesFromFile("colleges.csv", donationManagerTest);
