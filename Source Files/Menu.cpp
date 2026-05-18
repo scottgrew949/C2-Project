@@ -18,19 +18,19 @@ using namespace std;
 // Your code here…
 void displayMenu()
 {
-    cout << string(13, '=') << " DONATION MENU " << string(13, '=') 
-        << "\n\n";
-    cout << "\t\t1. Add college\n"
-         << "\t\t2. Add donation\n"
-         << "\t\t3. Print colleges\n"
-         << "\t\t4. Print donations by college\n"
-         << "\t\t5. Print donations by donor\n"
-         << "\t\t6. Print totals by college\n"
-         << "\t\t7. Print totals by donor\n"
-         << "\t\t8. Print statistics\n"
-         << "\t\t9. Print highest donor\n"
-         << "\t\t10. Print highest-funded college\n"
-         << "\t\t0. Exit\n" << endl;
+    cout << "\n" << string(13, '=') << " DONATION MENU " 
+         << string(13, '=') << "\n\n";
+    cout << "\t1. Add college\n"
+         << "\t2. Add donation\n"
+         << "\t3. Print colleges\n"
+         << "\t4. Print donations by college\n"
+         << "\t5. Print donations by donor\n"
+         << "\t6. Print totals by college\n"
+         << "\t7. Print totals by donor\n"
+         << "\t8. Print statistics\n"
+         << "\t9. Print highest donor\n"
+         << "\t10. Print highest-funded college\n"
+         << "\t0. Exit\n" << endl;
 }
 
 
@@ -46,91 +46,79 @@ void processUserChoices(DonationManager& manager)
         cin >> choice;
         cout << endl;
 
-        if (cin.fail())
-        {
-            // Check? Error not necessary for now?
-        }
-
         if(choice == 1) 
         {
             string collegeCode, collegeName;
-            cout << "\nEnter college code: ";
+            cout << "Enter college code: ";
             cin >> collegeCode;
-            cout << "\nEnter college name: ";
+            cout << "Enter college name: ";
+            cin.ignore();
             getline(cin, collegeName);
             manager.addCollege(collegeCode, collegeName);
 
-            cout << "\t\t>>> College added.\n" << endl;
-            system("pause");
-            // Need to handle the output here for waiting and pressign any key
-            // Error handling?
-
+            cout << "\n\t>>> College added.\n" << endl;
         }
         else if (choice == 2) 
         {
             int donationAmount = 0;
             string newDonorName, collegeName, collegeCode;
-            cout << "\nEnter new donor name: ";
+            cout << "Enter new donor name: ";
+            cin.ignore();
             getline(cin, newDonorName);
-            cout << "\t\t>>> New donor ID: " << manager.addDonor(newDonorName) << endl;
+            int tempID = manager.addDonor(newDonorName);
+            cout << "\n\t>>> New donor ID: " << tempID << endl;
 
             cout << "\nEnter college code: ";
             cin >> collegeCode;
 
-            cout << "\n\nEnter donation amount: ";
+            cout << "Enter donation amount: ";
             cin >> donationAmount;
-            cout << "\n\n\t\t>>> College added.\n" << endl;
-
-            system("pause");
-            // Need to handle the output here for waiting and pressign any key
-            // Error handling?
+            manager.addDonation(tempID, collegeCode, donationAmount);
+            cout << "\n\t>>> Donation added.\n" << endl;
         }
         else if (choice == 3) 
         {
             manager.printColleges();
-
-            system("pause");
-            // Need to handle the output here for waiting and pressign any key
-            // Error handling?
+            system("Pause");
         }
-        else if (choice == 4) 
+        else if(choice == 4)
+        {
+            manager.printDonationsByCollege();
+            system("Pause");
+        }
+        else if(choice == 5)
         {
             manager.printDonationsByDonor();
-
-            system("pause");
-            // Need to handle the output here for waiting and pressign any key
-            // Error handling?
+            system("Pause");
         }
-        else if (choice == 5) 
+        else if (choice == 6)
         {
-            manager.printDonationsByDonor();
-
-            system("pause");
-            // Need to handle the output here for waiting and pressign any key
-            // Error handling?
+            manager.printTotalsByCollege();
+            system("Pause");
         }
-        else if (choice == 6) 
+        else if (choice == 7)
         {
-
+            manager.printTotalsByDonor();
+            system("Pause");
         }
-        else if (choice == 7) 
+        else if (choice == 8)
         {
-
+            manager.printStatistics();
+            system("Pause");
         }
-        else if (choice == 8) 
+        else if (choice == 9)
         {
-
+            manager.printHighestDonor();
+            system("Pause");
         }
-        else if (choice == 9) 
+        else if (choice == 10)
         {
-
+            manager.printCollegeWithHighestTotal();
+            system("Pause");
         }
-        else if (choice == 10) 
+        else if (choice == 0)
         {
-
+            cout << ">>>Logging out...";
         }
-        else if (choice == 0) 
-        { break; }
-
     }
 }

@@ -27,6 +27,9 @@ void loadCollegesFromFile(const string& fileName,
         string line;
         while(getline(inFile, line))
         {
+            if (!line.empty() && line.back() == '\r')
+                line.pop_back();
+
             stringstream ss(line);
             string code, name;
             getline(ss, code, ',');
@@ -54,6 +57,9 @@ void loadDonationsFromFile(const string& fileName,
         string line;
         while (getline(inFile, line))
         {
+            if (!line.empty() && line.back() == '\r')
+                line.pop_back();
+
             stringstream ss(line);
             string donorName, collegeCode, amountStr;
             getline(ss, donorName, ',');
