@@ -1,18 +1,20 @@
 /*
-	(name header)
-*/
+    Grew, Scott (Team Leader)
+    Yoshikawa, Teppei 
 
+    Spring 2026
+    CS A250 - C++ 2
+
+    College Donations
+*/
 
 #include "Menu.h"
 #include "DonationManager.h"
 
-
 #include <iostream>
 #include <string>
 
-
 using namespace std;
-
 
 // Definition of function displayMenu
 // Your code here…
@@ -33,13 +35,12 @@ void displayMenu()
          << "\t0. Exit\n" << endl;
 }
 
-
 // Definition of function processUserChoices
 // Your code here...
 void processUserChoices(DonationManager& manager)
 {
     int choice = -1;
-    while(choice != 0)
+    while (choice != 0)
     {
         displayMenu();
         cout << "Enter your choice: ";
@@ -56,7 +57,9 @@ void processUserChoices(DonationManager& manager)
             getline(cin, collegeName);
             manager.addCollege(collegeCode, collegeName);
 
-            cout << "\n\t>>> College added.\n" << endl;
+            cout << "\n\t>>> College added." << endl;
+            cout << endl;
+            system("Pause");
         }
         else if (choice == 2) 
         {
@@ -74,51 +77,62 @@ void processUserChoices(DonationManager& manager)
             cout << "Enter donation amount: ";
             cin >> donationAmount;
             manager.addDonation(tempID, collegeCode, donationAmount);
-            cout << "\n\t>>> Donation added.\n" << endl;
+            cout << "\n\t>>> Donation added." << endl << endl;
+            system("Pause");
         }
         else if (choice == 3) 
         {
             manager.printColleges();
+            cout << endl;
             system("Pause");
         }
         else if(choice == 4)
         {
             manager.printDonationsByCollege();
+            cout << endl;
             system("Pause");
         }
         else if(choice == 5)
         {
             manager.printDonationsByDonor();
+            cout << endl;
             system("Pause");
         }
         else if (choice == 6)
         {
             manager.printTotalsByCollege();
+            cout << endl;
             system("Pause");
         }
         else if (choice == 7)
         {
             manager.printTotalsByDonor();
+            cout << endl;
             system("Pause");
         }
         else if (choice == 8)
         {
             manager.printStatistics();
+            cout << endl;
             system("Pause");
         }
         else if (choice == 9)
         {
             manager.printHighestDonor();
+            cout << endl;
             system("Pause");
         }
         else if (choice == 10)
         {
             manager.printCollegeWithHighestTotal();
+            cout << endl;
             system("Pause");
         }
         else if (choice == 0)
         {
             cout << ">>>Logging out...";
+            cout << endl;
+            system("Pause");
         }
     }
 }

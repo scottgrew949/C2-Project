@@ -1,6 +1,6 @@
 /*
     Grew, Scott (Team Leader)
-    Teppei Yoshikawa
+    Yoshikawa, Teppei 
 
     Spring 2026
     CS A250 - C++ 2
